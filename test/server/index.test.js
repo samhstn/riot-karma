@@ -6,7 +6,7 @@ const server = require('../../server/server.js');
   '/todo',
   '/counter',
   '/riot+compiler.min.js',
-  '/resource/tags/home.js'
+  '/tags/home.tag'
 ].forEach((url) => {
   tape(url + ' :: GET', (t) => {
     server.inject({ method: 'get', url })

@@ -33,7 +33,7 @@ server.register([ Inert, Vision ], (err) => {
       }
     },
     relativeTo: __dirname,
-    path: '../public/tags'
+    path: '../tags'
   });
 
   server.route([
@@ -71,6 +71,11 @@ server.register([ Inert, Vision ], (err) => {
       method: 'get',
       path: '/tags/{param*}',
       handler: { directory: { path: 'tags' } }
+    },
+    {
+      method: 'get',
+      path: '/resources/{param*}',
+      handler: { directory: { path: 'public' } }
     }
   ]);
 });
