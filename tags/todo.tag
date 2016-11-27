@@ -32,7 +32,7 @@
     toggle (i) {
       function map (todo, ind) {
         return i === ind
-        ? Object.assign({}, todo, { done: !todo.done })
+        ? assign({}, todo, { done: !todo.done })
         : todo;
       }
       this.todos = this.todos.map(map);

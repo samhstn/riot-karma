@@ -13,6 +13,7 @@ module.exports = (config) => {
       'karma-riot'
     ],
     files: [
+      'public/helpers/*.js',
       'tags/**/*.tag',
       'test/riot/**/*.js'
     ],
