@@ -5,12 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "for dir in tags/*;do\nnode_modules/.bin/riot $dir public/$dir.js\ndone",
-    "watch:server": "nodemon -w server -e html,css,js,json server/index.js",
-    "watch:build": "nodemon -w tags -e tag -x 'npm run build'",
-    "watch:both": "nodemon -w server -w tags -e html,css,js,json,tag -x 'npm run build && npm run start'",
+    "watch": "nodemon -w server server/index.js",
     "test": "npm run test:riot && npm run test:server",
-    "test:riot": "karma start karma.conf.js",
+    "test:riot": "karma start",
     "test:server": "node test/server/index.test.js",
     "test:riot:watch": "nodemon -w test -w tags -e js,tag -x 'npm run test:riot'",
     "test:server:watch": "nodemon -w test -w server -e js -x 'npm run test:server'"
