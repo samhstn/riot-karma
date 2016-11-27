@@ -41,3 +41,4 @@ Phantomjs is remarkably easy to host on travis and ensures browser compatibility
 
 I had no problems with karma-riot, I would recommend reading the source code as it's quite short and easy to follow along and it gives you an idea of the karma interface to insert a preprocessor and plugin.
 
+The 'progress' reporter is not that great, if you end up using mocha, the karma-mocha-reporter reports much better
