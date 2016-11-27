@@ -30,9 +30,11 @@
     }
 
     toggle (i) {
-      const map = (todo, ind) => i === ind
+      function map (todo, ind) {
+        return i === ind
         ? Object.assign({}, todo, { done: !todo.done })
         : todo;
+      }
       this.todos = this.todos.map(map);
     }
   </script>
