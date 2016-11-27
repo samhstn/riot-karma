@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/shouston3/riot-karma.svg?branch=master)](https://travis-ci.org/shouston3/riot-karma)
-# Riot Counter testing using Karma
+# Riot Components tested using Karma
+
+## What
+
+A demonstration of using karma-riot
 
 ## Why
 
