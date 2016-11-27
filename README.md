@@ -31,3 +31,13 @@ npm install
 npm test
 ```
 
+## Pain points
+
+I would recommend not using karma-tap
+
+Both phantomjs and chrome work well locally
+
+Phantomjs is remarkably easy to host on travis and ensures browser compatibility, so I decided on using that
+
+I had no problems with karma-riot, I would recommend reading the source code as it's quite short and easy to follow along and it gives you an idea of the karma interface to insert a preprocessor and plugin.
+
