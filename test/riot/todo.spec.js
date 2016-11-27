@@ -1,13 +1,13 @@
-const getDiv = (innerHtml) => {
-  const divs = document.getElementsByTagName('div');
-  return [].filter.call(divs, (div) => {
+var getDiv = function (innerHtml) {
+  var divs = document.getElementsByTagName('div');
+  return [].filter.call(divs, function (div) {
     return div.innerHTML === innerHtml;
   })[0];
 }
 
-describe('todo', () => {
-  beforeAll(() => {
-    const component = document.createElement('todo');
+describe('todo', function () {
+  beforeAll(function () {
+    var component = document.createElement('todo');
     document.body.appendChild(component);
     riot.mount('todo', {
       todos: [
@@ -18,13 +18,13 @@ describe('todo', () => {
     });
   });
 
-  afterAll(() => {
-    const todo = document.getElementsByTagName('todo');
+  afterAll(function () {
+    var todo = document.getElementsByTagName('todo');
     document.body.removeChild(todo);
   });
 
-  it('should have a link to home', () => {
-    const homeLink = document.getElementsByTagName('a')[0];
+  it('should have a link to home', function () {
+    var homeLink = document.getElementsByTagName('a')[0];
 
     expect(homeLink.href)
       .toBe('http://localhost:9876/');
@@ -32,8 +32,8 @@ describe('todo', () => {
       .toBe('Home');
   });
 
-  it('should have correct first todo', () => {
-    const first = getDiv('first');
+  it('should have correct first todo', function () {
+    var first = getDiv('first');
 
     expect(first.innerHTML)
       .toBe('first');
@@ -42,9 +42,9 @@ describe('todo', () => {
       .toBe(true);
   });
 
-  it('should have correct second and third todos', () => {
-    const second = getDiv('second');
-    const third = getDiv('third');
+  it('should have correct second and third todos', function () {
+    var second = getDiv('second');
+    var third = getDiv('third');
 
     expect(second.innerHTML)
       .toBe('second');
@@ -60,12 +60,12 @@ describe('todo', () => {
   });
 
 
-  it('should be able to complete a todo', () => {
-    const secondUnclicked = getDiv('second');
+  it('should be able to complete a todo', function () {
+    var secondUnclicked = getDiv('second');
 
     secondUnclicked.click();
 
-    const secondClicked = getDiv('second');
+    var secondClicked = getDiv('second');
 
     expect(secondUnclicked.classList.length)
       .toBe(0);
@@ -74,22 +74,22 @@ describe('todo', () => {
       .toBe('completed');
   });
 
-  it('should have an empty input box', () => {
-    const input = document.querySelector('input');
+  it('should have an empty input box', function () {
+    var input = document.querySelector('input');
     expect(input.value).toBe('');
   });
 
-  it('should be able to add a todo', () => {
-    const input = document.querySelector('input');
+  it('should be able to add a todo', function () {
+    var input = document.querySelector('input');
     input.value = 'new todo';
 
     document.querySelector('button').click();
 
-    const newTodo = getDiv('new todo');
+    var newTodo = getDiv('new todo');
 
     expect(newTodo.innerHTML).toBe('new todo');
 
-    const finalInput = document.querySelector('input');
+    var finalInput = document.querySelector('input');
     expect(finalInput.value).toBe('');
   });
 });

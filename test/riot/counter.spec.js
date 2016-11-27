@@ -1,17 +1,17 @@
-describe('counter', () => {
-  beforeAll(() => {
-    const component = document.createElement('counter');
+describe('counter', function() {
+  beforeAll(function() {
+    var component = document.createElement('counter');
     document.body.appendChild(component);
     riot.mount('counter');
   });
 
-  afterAll(() => {
-    const counter = document.querySelector('counter');
+  afterAll(function() {
+    var counter = document.querySelector('counter');
     document.body.removeChild(counter);
   });
 
-  it('should have a link to home', () => {
-    const homeLink = document.getElementsByTagName('a')[0];
+  it('should have a link to home', function() {
+    var homeLink = document.getElementsByTagName('a')[0];
 
     expect(homeLink.href)
       .toBe('http://localhost:9876/');
@@ -19,10 +19,10 @@ describe('counter', () => {
       .toBe('Home');
   });
 
-  it('should have increment and decrement buttons', () => {
-    const buttons = document.querySelectorAll('button');
-    const increment = buttons[0];
-    const decrement = buttons[1];
+  it('should have increment and decrement buttons', function() {
+    var buttons = document.querySelectorAll('button');
+    var increment = buttons[0];
+    var decrement = buttons[1];
 
     expect(increment.textContent)
       .toBe('Increment');
@@ -31,13 +31,13 @@ describe('counter', () => {
       .toBe('Decrement');
   });
 
-  it('should have an initial count of 0', () => {
+  it('should have an initial count of 0', function() {
     expect(document.querySelector('div').textContent)
       .toBe('0');
   });
 
-  it('should be able to increment', () => {
-    const increment = document.querySelector('button');
+  it('should be able to increment', function() {
+    var increment = document.querySelector('button');
     increment.click();
 
     expect(document.querySelector('div').textContent)
