@@ -8,7 +8,7 @@ module.exports = (config) => {
     ],
     plugins: [
       'karma-chai',
-      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-riot'
     ],
@@ -24,7 +24,7 @@ module.exports = (config) => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: [ 'Chrome' ],
+    browsers: [ 'PhantomJS' ],
     singleRun: true
   });
 };
