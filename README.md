@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/shouston3/riot-karma.svg?branch=master)](https://travis-ci.org/shouston3/riot-karma)
+[![Build Status](https://travis-ci.org/shouston3/riot-karma.svg?branch=master&style=flat-square)](https://travis-ci.org/shouston3/riot-karma)
 # Riot Components tested using Karma
 
 ## What
